@@ -29,9 +29,8 @@ class CreateProductsTable extends Migration
             $table->string('picture_url')->nullable(false)->comment('封面图');
             $table->string('posters')->comment('海报');
             $table->tinyInteger('status')->nullable(false)->comment('状态 -1=>下架,1=>上架,2=>预售,0=>未上架');
-            $table->tinyInteger('state')->nullable(false)->comment('审核状态 -1 审核失败 0 未审核 1 审核成功');
             $table->integer('sort')->default(99)->comment('排序');
-            $table->dateTime('deleted_at');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }
